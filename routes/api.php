@@ -19,9 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('user/login',[UserAuthController::class,'login'])->name('user-login');
-Route::post('user-register',[UserAuthController::class,'register'])->name('user-register');
+Route::post('user/register',[UserAuthController::class,'register'])->name('user-register');
 
 Route::prefix('user')->middleware('auth:sanctum')->group(function () {
     Route::delete('/',[UserAuthController::class,'profile'])->name('user-profile');
     Route::delete('/{id}',[UserAuthController::class,'logout'])->name('user-logout');
 });
+
+Route::delete('/logout/{id}',[UserAuthController::class,'logout'])->name('user-logout');

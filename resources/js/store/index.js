@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import Vuex, { mapState } from 'vuex';
 import User from './user';
 
 Vue.use(Vuex);

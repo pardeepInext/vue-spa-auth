@@ -5,11 +5,11 @@ import App from './App';
 
 Vue.config.productionTip = false;
 
-import 'bootstrap/scss/bootstrap.scss';
+
 
 new Vue({
     el: '#app',
-    router,
     store,
+    router,
     render: h => h(App)
 })
